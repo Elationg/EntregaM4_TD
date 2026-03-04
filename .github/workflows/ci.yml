@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: jacoco-report
-          path: smarttask/target/site/jacoco
+          path: smarttask/target/site/jacoco/index.html
 
   deploy-coverage:
     needs: build-and-test
