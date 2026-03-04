@@ -27,6 +27,9 @@ jobs:
       - name: Build and run tests
         run: mvn -f smarttask/pom.xml clean test
 
+      - name: Debug folder structure
+        run: ls -R smarttask/target/site/jacoco
+
       - name: Upload JaCoCo report
         uses: actions/upload-pages-artifact@v3
         with:
