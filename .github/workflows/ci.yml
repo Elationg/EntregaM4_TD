@@ -34,23 +34,14 @@ jobs:
           name: jacoco-report
           path: smarttask/target/site/jacoco/index.html
 
-  deploy-coverage:
+  deploy:
     needs: build-and-test
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Download JaCoCo Report
-        uses: actions/download-artifact@v4
-        with:
-          name: jacoco-report
-          path: jacoco-site
-
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./jacoco-site
-          publish_branch: gh-pages
+        id: deployment
+        uses: actions/deploy-pages@v4
