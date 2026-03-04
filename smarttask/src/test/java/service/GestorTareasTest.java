@@ -233,6 +233,10 @@ public class GestorTareasTest {
                 1
                 4
                 1
+                No Estudiar
+                1
+                5
+                1
                 0
                 """;
 
