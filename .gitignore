@@ -1,0 +1,38 @@
+# ==========================
+# MAVEN
+# ==========================
+
+# Ignorar todo target
+target/
+
+# PERMITIR reporte JaCoCo
+!smarttask/target/
+smarttask/target/*
+!smarttask/target/site/
+smarttask/target/site/*
+!smarttask/target/site/index.html
+
+
+# ==========================
+# IDEs
+# ==========================
+
+# VSCode
+.vscode/
+
+
+# ==========================
+# Archivos compilados
+# ==========================
+
+*.class
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.swp
+
+# Mac
+.DS_Store
